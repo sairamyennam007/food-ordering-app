@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Food Ordering App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">🍔 Foodie</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="cart-btn" onclick="toggleCart()">
+            🛒 Cart <span id="cart-count">0</span>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div>
+            <h1>Delicious Food Delivered To You</h1>
+            <p>Order your favorite food and enjoy it at home.</p>
+            <a href="#menu" class="order-btn">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Food Menu -->
+    <main id="menu">
+        <h2>Our Food Menu</h2>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search your favorite food..."
+        >
+
+        <div class="categories">
+            <button class="active" onclick="filterFood('All', this)">All</button>
+            <button onclick="filterFood('Pizza', this)">Pizza</button>
+            <button onclick="filterFood('Burger', this)">Burger</button>
+            <button onclick="filterFood('Biryani', this)">Biryani</button>
+            <button onclick="filterFood('Dessert', this)">Dessert</button>
+        </div>
+
+        <div class="food-container" id="food-container"></div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+    <aside class="cart" id="cart">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button onclick="toggleCart()">✖</button>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-footer">
+            <h3>Total: ₹<span id="total">0</span></h3>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </aside>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <h2>About Foodie</h2>
+        <p>
+            Foodie is a simple online food ordering application.
+            Browse delicious meals, add them to your cart,
+            and place your order easily.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Foodie. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
